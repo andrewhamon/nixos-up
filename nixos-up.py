@@ -201,6 +201,8 @@ config_path = "/mnt/etc/nixos/configuration.nix"
 with open(config_path, "r") as f:
   config = f.read()
 
+run(["sed", "-i", "'s/# services.openssh.enable = true;/services.openssh.enable = true;/'", config_path])
+
 # nixos-up banner
 config = """\
 ################################################################################
